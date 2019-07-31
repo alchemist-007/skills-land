@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<style>
+/** code by webdevtrick ( https://webdevtrick.com ) **/
+html {
+  display: grid;
+  min-height: 100%;
+}
+ 
+body {
+  display: grid;
+  background: #333;
+}
+ 
+.main {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 850px;
+  height: 480px;
+}
+ 
+h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #F6F4F3;
+}
+h1 sup {
+	text-transform: lowercase;
+	color: #FF3E41;
+}
+ 
+#countdown {
+  color: #F6F4F3;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+  letter-spacing: 5px;
+  margin-top: 5%;
+}
+ 
+.days, .hours, .minutes, .seconds, .left {
+  display: inline-block;
+  padding: 20px;
+  width: 120px;
+  border-radius: 10px;
+}
+ 
+.days {
+  background: #D87200;
+}
+ 
+.hours {
+  background:  #FF3E41;
+}
+ 
+.minutes {
+  background: #FFB20C;
+}
+ 
+.seconds {
+  background:  #2186FF;
+}
+ 
+.left {
+	background: #E10A0A;
+}
+.c-number {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  font-size: 5em;
+}
+</style>
 
-  <title>Skills-land</title>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Cowndown Timer | Webdevtrick.com</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Rubik+Mono+One&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+	    <title>Skills-land Test commit 1</title>
 </head>
 
 <body>
-  <p>Skills-land</p>
-</body>
+<div class="main">
+	  <h1>Under construction, 12 / 08 /2019</h1>
+ 
+  <div id="countdown"></div>
+</div> 
+ 
+    <script>
+	/** code by webdevtrick ( https://webdevtrick.com ) **/
+const year = new Date().getFullYear();
+const choosenDate = new Date("2019-08-12").getTime();
 
+let countdown = setInterval(function() {
+ 
+  const today = new Date().getTime();
+ 
+  const diff = choosenDate - today;
+ 
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+ 
+  document.getElementById("countdown").innerHTML =
+    "<div class=\"days\"> \
+  <div class=\"c-number\">" + days + "</div>days</div> \
+<div class=\"hours\"> \
+  <div class=\"c-number\">" + hours + "</div>hours</div> \
+<div class=\"minutes\"> \
+  <div class=\"c-number\">" + minutes + "</div>minutes</div> \
+<div class=\"seconds\"> \
+  <div class=\"c-number\">" + seconds + "</div>seconds</div> \
+<div class=\"left\">LEFT</div>\
+</div>";
+ 
+}, 1000);
+	</script>
+ 
+</body>
 </html>
