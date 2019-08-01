@@ -7,12 +7,12 @@ html {
   display: grid;
   min-height: 100%;
 }
- 
+
 body {
   display: grid;
   background: #333;
 }
- 
+
 .main {
   position: relative;
   margin: auto;
@@ -20,7 +20,7 @@ body {
   width: 850px;
   height: 480px;
 }
- 
+
 h1 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -34,7 +34,7 @@ h1 sup {
 	text-transform: lowercase;
 	color: #FF3E41;
 }
- 
+
 #countdown {
   color: #F6F4F3;
   text-align: center;
@@ -44,30 +44,30 @@ h1 sup {
   letter-spacing: 5px;
   margin-top: 5%;
 }
- 
+
 .days, .hours, .minutes, .seconds, .left {
   display: inline-block;
   padding: 20px;
   width: 120px;
   border-radius: 10px;
 }
- 
+
 .days {
   background: #D87200;
 }
- 
+
 .hours {
   background:  #FF3E41;
 }
- 
+
 .minutes {
   background: #FFB20C;
 }
- 
+
 .seconds {
   background:  #2186FF;
 }
- 
+
 .left {
 	background: #E10A0A;
 }
@@ -80,7 +80,7 @@ h1 sup {
 
 <head>
   <meta charset="UTF-8">
-  <title>JavaScript Cowndown Timer | Webdevtrick.com</title>
+  <title>For Skilled People</title>
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Rubik+Mono+One&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
 	    <title>Skills-land Test commit 1</title>
@@ -89,26 +89,26 @@ h1 sup {
 <body>
 <div class="main">
 	  <h1>Under construction, 12 / 08 /2019</h1>
- 
+
   <div id="countdown"></div>
-</div> 
- 
+</div>
+
     <script>
 	/** code by webdevtrick ( https://webdevtrick.com ) **/
 const year = new Date().getFullYear();
 const choosenDate = new Date("2019-08-12").getTime();
 
 let countdown = setInterval(function() {
- 
+
   const today = new Date().getTime();
- 
+
   const diff = choosenDate - today;
- 
+
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
   let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((diff % (1000 * 60)) / 1000);
- 
+
   document.getElementById("countdown").innerHTML =
     "<div class=\"days\"> \
   <div class=\"c-number\">" + days + "</div>days</div> \
@@ -120,9 +120,9 @@ let countdown = setInterval(function() {
   <div class=\"c-number\">" + seconds + "</div>seconds</div> \
 <div class=\"left\">LEFT</div>\
 </div>";
- 
+
 }, 1000);
 	</script>
- 
+
 </body>
 </html>
